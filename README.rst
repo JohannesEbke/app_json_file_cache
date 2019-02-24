@@ -6,6 +6,10 @@ Provides a function decorator that caches the return value in a JSON file in the
 * Currently no support for function parameters. Only one value per cache.
 * Support for dropping the cache if a "vary" value changed, e.g. your program version.
 
+.. image:: https://travis-ci.org/JohannesEbke/xdg_json_cache.svg?branch=master
+   :target: https://travis-ci.org/JohannesEbke/xdg_json_cache
+
+
 Usage
 -----
 

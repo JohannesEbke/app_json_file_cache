@@ -34,7 +34,7 @@ class Cache:
             data = load(open(self.filename))
             if data.get('version') == 1 and data.get('vary') == self.vary:
                 self._data = data
-        except (ValueError, OSError):
+        except (ValueError, OSError, IOError):
             pass
 
     def _store_result(self, result):
