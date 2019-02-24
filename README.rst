@@ -3,8 +3,8 @@ xdg\_json\_cache
 
 Provides a function decorator that caches the return value in a JSON file in the appropriate XDG cache directory.
 
- * Currently no support for function parameters. Only one value per cache.
- * Support for dropping the cache if a "vary" value changed, e.g. your program version.
+* Currently no support for function parameters. Only one value per cache.
+* Support for dropping the cache if a "vary" value changed, e.g. your program version.
 
 Usage
 -----
@@ -30,5 +30,5 @@ More Example usage::
 Caveats
 -------
 
- * Names must be unique per app. If you reuse names, chaos ensues.
- * It's your responsibility that return values are serializable to JSON.
+* Names must be unique per app. If you reuse names, chaos ensues.
+* It's your responsibility that return values are serializable to JSON.
