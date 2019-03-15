@@ -6,6 +6,6 @@ install:
   - pip install flake8 yapf pytest
   - python setup.py install
 script:
-  - pytest xdg_json_cache
-  - flake8 xdg_json_cache
-  - yapf -d -r xdg_json_cache
+  - pytest app_json_file_cache
+  - flake8 app_json_file_cache
+  - yapf -d -r app_json_file_cache

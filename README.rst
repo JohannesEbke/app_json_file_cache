@@ -1,13 +1,14 @@
-xdg\_json\_cache
-================
+app\_json\_file\_cache
+======================
 
-Provides a function decorator that caches the return value in a JSON file in the appropriate XDG cache directory.
+Provides a function decorator that caches the return value in a JSON file in the appropriate application cache directory.
 
-* Currently no support for function parameters. Only one value per cache.
-* Support for dropping the cache if a "vary" value changed, e.g. your program version.
+It requires all function parameters and return values to be encodeable to JSON, so that the cache is human-readable.
 
-.. image:: https://travis-ci.org/JohannesEbke/xdg_json_cache.svg?branch=master
-   :target: https://travis-ci.org/JohannesEbke/xdg_json_cache
+It supports a "vary" guard value (e.g. a data model version) that protects against using old versions of cache.
+
+.. image:: https://travis-ci.org/JohannesEbke/app_json_file_cache.svg?branch=master
+   :target: https://travis-ci.org/JohannesEbke/app_json_file_cache
 
 
 Usage
@@ -15,24 +16,26 @@ Usage
 
 Example usage::
 
-  from xdg_json_cache import make_app_cache
-  Cache = make_app_cache("myapp")
+  from app_json_file_cache import AppCache
+  cache = AppCache("myapp")
 
-  @Cache("expensive")
+  @cache("expensive")
   def expensive_function():
       return calculator()
 
 More Example usage::
 
-  from xdg_json_cache import make_app_cache
-  Cache = make_app_cache("myapp")
+  from app_json_file_cache import AppCache
+  cache = AppCache("myapp")
 
-  @Cache("expensive", vary=VERSION)
-  def expensive_function():
-      return calculator()
+  @cache("expensive", vary=VERSION)
+  def expensive_function(param):
+      return calculator(param)
 
 Caveats
 -------
 
 * Names must be unique per app. If you reuse names, chaos ensues.
+* Each set of function parameter values creates a new file. This may lead to too many files in a directory on some systems.
+* Mixing positional and keyword arguments is not supported
 * It's your responsibility that return values are serializable to JSON.

@@ -10,11 +10,11 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='xdg_json_cache',
+    name='app_json_file_cache',
     version='0.1.0',
-    description='Simple XDG-respecting JSON cache for expensive functions without parameters.',
+    description='Simple user directory respecting JSON cache for expensive functions.',
     long_description=long_description,
-    url='https://github.com/JohannesEbke/xdg_json_cache',
+    url='https://github.com/JohannesEbke/app_json_file_cache',
     author='Johannes Ebke',
     author_email='johannes@ebke.org',
     classifiers=[
@@ -28,6 +28,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
     ],
-    keywords='xdg json cache',
-    packages=['xdg_json_cache'],
+    keywords='xdg json cache appdirs',
+    install_requires=['appdirs'],
+    packages=['app_json_file_cache'],
 )
