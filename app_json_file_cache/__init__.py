@@ -1,8 +1,6 @@
-from functools import partial
 from hashlib import sha512
 from json import dump, dumps, load
-from os import getenv, makedirs, unlink
-from os.path import expandvars
+from os import makedirs
 from os.path import join as pjoin
 from shutil import rmtree
 
