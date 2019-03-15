@@ -56,3 +56,27 @@ def test_parameter_dict():
     assert cached_f2({'a': 2, 'b': 3}, {'c': 3}) == {}  # This one is not cached
 
     cached_f2.clear()
+
+
+def test_keyword_args():
+    @Cache("keyword")
+    def keyword_function(a=1, b=2):
+        return a + b
+
+    @Cache("keyword")
+    def test_keyword_function(a=1, b=2, c=0):
+        return 0
+
+    assert keyword_function() == 3
+    assert keyword_function(a=10) == 12
+    assert keyword_function(b=10) == 11
+    assert keyword_function(b=10, a=10) == 20
+
+    assert test_keyword_function(a=10) == 12
+    assert test_keyword_function(b=10) == 11
+    assert test_keyword_function(b=10, a=10) == 20
+    assert test_keyword_function(a=10, b=10) == 20
+    assert test_keyword_function() == 3
+    assert test_keyword_function(a=10, b=10, c=1) == 0
+
+    keyword_function.clear()

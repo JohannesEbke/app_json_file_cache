@@ -55,8 +55,8 @@ class AppCache:
 class FunctionCache(DataCache):
     def __call__(self, func):
         def f(*args, **kwargs):
-            assert args == [] or kwargs == {}, 'Mixing positional and keyword arguments not supported'
             key = {'args': args, 'kwargs': kwargs}
+            assert args == () or kwargs == {}, 'Mixing positional and keyword arguments not supported: {}'.format(key)
             try:
                 return self.get(key)
             except KeyError:
