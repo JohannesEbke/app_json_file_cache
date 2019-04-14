@@ -1,13 +1,14 @@
 from hashlib import sha512
 from json import dump, dumps, load
 from os import makedirs
+from os.path import exists
 from os.path import join as pjoin
 from shutil import rmtree
 
 from appdirs import user_cache_dir
 
 
-class DataCache:
+class DataCache(object):
     def __init__(self, app_name, function_name, vary=None):
         self.filepath = pjoin(user_cache_dir(app_name), function_name)
         self.vary = vary
@@ -35,7 +36,8 @@ class DataCache:
         dump(self._data[key_string], open(self._filename(key_string), "w"))
 
     def clear(self):
-        rmtree(self.filepath)
+        if exists(self.filepath):
+            rmtree(self.filepath)
 
     def _filename(self, key_string):
         return pjoin(self.filepath, sha512(key_string.encode('utf-8')).hexdigest() + ".json")

@@ -32,6 +32,24 @@ More Example usage::
   def expensive_function(param):
       return calculator(param)
 
+  expensive_function.recalculate(param1) # recalculate if external effects change
+
+Using a default function until the next recalculate::
+
+  from app_json_file_cache import AppCache
+  cache = AppCache("myapp")
+
+  def cheap_standin(param):
+      return estimate(param)
+
+  @cache("expensive", vary=VERSION, cheap_default_func=cheap_standin)
+  def expensive_function(param):
+      return calculator(param)
+
+  expensive_function(param1) # cheap_standin is used
+  expensive_function.recalculate(param1) # cache is updated with expensive_function
+  expensive_function(param1) # cached value from expensive_function is used
+
 Caveats
 -------
 
