@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='app_json_file_cache',
-    version='0.2.1',
+    version='0.2.2',
     description='Simple user directory respecting JSON cache for expensive functions.',
     long_description=long_description,
     url='https://github.com/JohannesEbke/app_json_file_cache',

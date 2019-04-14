@@ -7,6 +7,9 @@ It requires all function parameters and return values to be encodeable to JSON, 
 
 It supports a "vary" guard value (e.g. a data model version) that protects against using old versions of cache.
 
+Additionally, a cheaper default function (e.g. returning shipped, precalculated values) can be specified as a stand-in
+until an explicit recalculate function is called.
+
 .. image:: https://travis-ci.org/JohannesEbke/app_json_file_cache.svg?branch=master
    :target: https://travis-ci.org/JohannesEbke/app_json_file_cache
 
