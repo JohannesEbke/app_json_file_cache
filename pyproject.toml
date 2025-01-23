@@ -11,11 +11,12 @@ description = "Simple JSON cache for expensive functions, respecting user direct
 readme = "README.rst"
 requires-python = ">=3.7"
 keywords = ["xdg", "json", "cache", "function cache", "memoization", "memoisation"]
-license = {text = "MIT License"}
+license = "MIT"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
 ]
 dependencies = [
     'platformdirs'
