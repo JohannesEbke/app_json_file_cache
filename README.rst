@@ -3,7 +3,8 @@ app\_json\_file\_cache
 
 Provides a function decorator that caches the return value in a JSON file in the appropriate application cache directory.
 
-It requires all function parameters and return values to be encodeable to JSON, so that the cache is human-readable.
+It requires all function parameters and return values to be encodeable to JSON, so that the cache content
+is human-readable. The file names are based on a SHA512 hash of the function parameters.
 
 It supports a "vary" guard value (e.g. a data model version) that protects against using old versions of cache.
 
