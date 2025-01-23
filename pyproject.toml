@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "app_json_file_cache"
+authors = [
+    {name = "Johannes Ebke", email = "johannes@ebke.org"}
+]
+description = "Simple JSON cache for expensive functions, respecting user directories"
+readme = "README.rst"
+requires-python = ">=3.7"
+keywords = ["xdg", "json", "cache", "function cache", "memoization", "memoisation"]
+license = {text = "MIT License"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    'platformdirs'
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/JohannesEbke/app_json_file_cache"
+Repository = "https://github.com/JohannesEbke/app_json_file_cache.git"
+Issues = "https://github.com/JohannesEbke/app_json_file_cache/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "app_json_file_cache.__version__"}

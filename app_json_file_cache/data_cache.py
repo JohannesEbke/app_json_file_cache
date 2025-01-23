@@ -5,7 +5,7 @@ from os.path import exists
 from os.path import join as pjoin
 from shutil import rmtree
 
-from appdirs import user_cache_dir
+from platformdirs import user_cache_dir
 
 
 class DataCache(object):
