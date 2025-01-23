@@ -4,6 +4,7 @@ Cache = AppCache("app_json_file_cache")
 
 
 def test_default_recalculate():
+
     def default_func():
         return 42
 
@@ -22,6 +23,7 @@ def test_default_recalculate():
 
 
 def test_default_with_parameters_recalculate():
+
     def default_func(_):
         return 42
 

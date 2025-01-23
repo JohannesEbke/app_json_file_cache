@@ -59,6 +59,7 @@ def test_parameter_dict():
 
 
 def test_keyword_args():
+
     @Cache("keyword")
     def keyword_function(a=1, b=2):
         return a + b

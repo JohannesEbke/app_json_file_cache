@@ -9,6 +9,7 @@ from appdirs import user_cache_dir
 
 
 class DataCache(object):
+
     def __init__(self, app_name, function_name, vary=None):
         self.filepath = pjoin(user_cache_dir(app_name), function_name)
         self.vary = vary
