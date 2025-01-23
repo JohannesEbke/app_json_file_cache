@@ -10,8 +10,8 @@ It supports a "vary" guard value (e.g. a data model version) that protects again
 Additionally, a cheaper default function (e.g. returning shipped, precalculated values) can be specified as a stand-in
 until an explicit recalculate function is called.
 
-.. image:: https://github.com/JohannesEbke/app_json_file_cache/actions/workflows/test/badge.svg
-   :target: https://github.com/JohannesEbke/app_json_file_cache/actions/workflows/test/
+.. image:: https://github.com/JohannesEbke/app_json_file_cache/actions/workflows/test.yaml/badge.svg
+   :target: https://github.com/JohannesEbke/app_json_file_cache/actions/workflows/test.yaml/
 
 
 Usage
