@@ -1,0 +1,31 @@
+name: Test
+
+on:
+  [ push pull_request ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Test Software and System under Test
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install flake8 yapf pytest build
+        python -m pip install .
+    - name: Lint and Formatting
+      run: |
+        yapf -d -r app_json_file_cache
+        flake8
+    - name: Functional Test
+      run: |
+        pytest
