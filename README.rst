@@ -11,6 +11,10 @@ It supports a "vary" guard value (e.g. a data model version) that protects again
 Additionally, a cheaper default function (e.g. returning shipped, precalculated values) can be specified as a stand-in
 until an explicit recalculate function is called.
 
+.. image:: https://img.shields.io/pypi/v/app-json-file-cache
+   :alt: PyPI
+   :target: https://pypi.org/project/app-json-file-cache/
+
 .. image:: https://github.com/JohannesEbke/app_json_file_cache/actions/workflows/test.yaml/badge.svg
    :target: https://github.com/JohannesEbke/app_json_file_cache/actions/workflows/test.yaml/
 
